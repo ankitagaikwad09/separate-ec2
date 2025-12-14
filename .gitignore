@@ -33,3 +33,8 @@ docker-compose.*.yaml
 # Logs
 # ---------------------
 log
+
+# ---------------------
+# ec2 instance files
+# ---------------------
+*.pemgit add
