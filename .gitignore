@@ -37,4 +37,4 @@ log
 # ---------------------
 # ec2 instance files
 # ---------------------
-*.pemgit add
+*.pem
