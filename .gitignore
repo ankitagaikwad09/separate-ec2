@@ -1,0 +1,35 @@
+# ---------------------
+# Node.js (frontend)
+# ---------------------
+frontend-ec2/node_modules/
+frontend-ec2/dist/
+frontend-ec2/build/
+frontend-ec2/npm-debug.log*
+frontend-ec2/yarn-debug.log*
+frontend-ec2/yarn-error.log*
+
+# ---------------------
+# Python (backend)
+# ---------------------
+backend-ec2/__pycache__/
+backend-ec2/*.py[cod]
+backend-ec2/*.pyo
+backend-ec2/*.pyd
+backend-ec2/venv/
+backend-ec2/env/
+backend-ec2/*.env
+
+# ---------------------
+# Docker
+# ---------------------
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.override.yaml
+docker-compose.*.yml
+docker-compose.*.yaml
+
+# ---------------------
+# Logs
+# ---------------------
+log
