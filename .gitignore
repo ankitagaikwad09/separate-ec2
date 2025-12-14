@@ -37,4 +37,4 @@ log
 # ---------------------
 # ec2 instance files
 # ---------------------
-*.pem
+ec2-single.pem
