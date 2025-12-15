@@ -2,13 +2,17 @@ version: "3.8"
 
 services:
   backend:
-    build: ./backend
+    build: ./backend-ec2
+    container_name: backend
     ports:
       - "5000:5000"
 
   frontend:
-    build: ./frontend
+    build: ./frontend-ec2
+    container_name: frontend
     ports:
       - "3000:3000"
+    environment:
+      - BACKEND_URL=http://backend:5000
     depends_on:
       - backend

@@ -26,6 +26,7 @@
       background: #0d6efd;
       color: white;
       border: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -40,19 +41,37 @@
   <script>
     document.getElementById("form").onsubmit = async (e) => {
       e.preventDefault();
+
       const data = {
         name: e.target.name.value,
         email: e.target.email.value
       };
 
-      const res = await fetch("/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
+      try {
+        const res = await fetch("/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
 
-      const result = await res.json();
-      alert(result.message);
+        const result = await res.json();
+
+        // Show popup with messagz̄e + name/email if available
+        if (result.message && result.user) {
+          alert(`${result.message}: ${result.user.name} (${result.user.email})`);
+        } 
+        else if (result.error) {
+          alert(`Error: ${result.error}`);
+        } 
+        else {
+          alert("Unexpected response from backend");
+        }
+
+
+      } catch (err) {
+        console.error(err);
+        alert("Error connecting to server");
+      }
     };
   </script>
 </body>
