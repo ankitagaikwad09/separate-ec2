@@ -38,3 +38,8 @@ log
 # ec2 instance files
 # ---------------------
 ec2-single.pem*.pem
+.DS_Store
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+*.pem
